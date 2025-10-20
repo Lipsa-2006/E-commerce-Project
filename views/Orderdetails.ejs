@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order details</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Final order</h1>
+    <hr>
+    <table>
+        <tr>
+            
+            <th>Product_ID</th>
+            <th>Customer_ID</th>
+            <th>Product_Name</th>
+            <th>Product_Quantity</th>
+            <th>Product_Rate</th>
+            
+        </tr>
+        <% for (product of  product2){ %>
+            <tr>
+            
+            <td><%= product.p_id %></td>
+            <td><%=c_id%></td>
+            <td><%= product.p_n%></td>
+            <td><%= product.quantity %></td>
+            <td><%= product.p_r%></td>
+            
+            </tr>
+        <%}%>
+    </table>
+    <h1>Your total amount is <%=Total%> Rs</h1>
+    <hr>
+    <form action="/final/<%=c_id%>" method="GET">
+        <button>Finish</button>
+    </form>
+ 
+</body>
+</html>

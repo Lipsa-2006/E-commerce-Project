@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Added to the cart</h1>
+    <hr>
+    <table>
+        <tr>
+            <th>Product_Quantity</th>
+            <th>Product_ID</th>
+            <th>Product_Name</th>
+            <th>Product_Rate</th>
+            <th>Customer_ID</th>
+        </tr>
+        <% for (product of product1){ %>
+            <tr>
+            <td><%= product.quantity %></td>
+            <td><%= product.p_id %></td>
+            <td><%= product.p_n%></td>
+            <td><%= product.p_r%></td>
+            <td><%=product.c_id%></td>
+            </tr>
+        <%}%>
+    </table>
+    <hr>
+    <form action="/category/<%=c_id%>" method="GET">
+        <h3>To add more items press:</h3>
+        <button>Add more</button>
+    </form>
+    <hr>
+    <form action="/order/<%=c_id%>" method="GET">
+        <h3>To get the bill done press:</h3>
+        <button>Generate Bill</button>
+    </form>
+</body>
+
+</html>

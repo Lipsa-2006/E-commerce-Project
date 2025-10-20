@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Products</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Here are the list of products </h1>
+    <table>
+        <tr>
+            <th>Product_ID</th>
+            <th>Product_Name</th>
+            <th>Product_Rate</th>
+            <th>Product_Quantity</th>
+            <th>Enter no. of Quantity</th>
+            
+        </tr>
+        <% for (product of result){ %>
+            <tr>
+                <td><%=product.p_id%></td>
+                <td><%=product.p_name%></td>
+                <td><%=product.p_rate%></td>
+                <td><%=product.p_quantity%></td>
+                <td><form action="/cart/<%=id%>/product/<%=product.p_id%>" method="post">
+                    <input type="number" placeholder="Enter quantity " name="quantity" value="1" min="1" max="<%= product.p_quantity %>">
+                    <button>Add to cart</button> </form></td>
+            </tr>
+        <%}%>
+    </table>
+</body>
+</html>

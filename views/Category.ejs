@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+</head>
+
+<body>
+    <h1>Please choose the category of your choice!!!</h1>
+    <form action="/show/<%=c_id%>" method="POST">
+        <label for="category">Select your Category:</label>
+        <select id="category" name="Category">
+            <option value="">--Select a Category--</option>
+            <option value="1" >Clothes</option>
+            <option value="2" >Shoes</option>
+            <option value="3" >Books</option>
+            <option value="4" >Cosmetics</option>
+            <option value="5">Electronic items</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
